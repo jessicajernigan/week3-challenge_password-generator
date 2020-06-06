@@ -2,7 +2,6 @@
 
 // ACCEPTANCE CRITERIA / PSEUDOCODE
 
-
 // WHEN prompted for the length of the password 
 // THEN I choose a length of at least 8 characters and no more than 128 characters --> Validate the user's answer. If it is <8 or >128, prompt the user to fix their input and prompt again. If the input is within the range, proceed.
 // WHEN prompted for character types to include in the password
@@ -18,14 +17,17 @@
 
 var lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var symbolsArray = ["[", "@", "^", "$", ".", "|", "?", "*", "+", "(", ")", "]", "%", "~", "!"]
-var allOptionsArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "[", "@", "^", "$", ".", "|", "?", "*", "+", "(", ")", "]", "%", "~", "!"]
-var allLettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var num = Math.floor(Math.random() * 9) + 1;
+var symbolsArray = ["!", "@", "#", "$", "%", "&", "|", ";", ">", "~", "`"]
+var randomNum = Math.floor(Math.random() * 9) + 1;
+var answersArray = []
+var passwordArray = []
+
+// var allOptionsArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "[", "@", "^", "$", ".", "|", "?", "*", "+", "(", ")", "]", "%", "~", "!"]
+// var allLettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 
 var generatePassword = function () {
-  var pwLength = window.prompt("How long do you need your password to be? Please enter a value betwen 8 and 128.");
+  var pwLength = window.prompt("How long do you need your password to be? Please enter a value between 8 and 128.");
   console.log("This many char:", pwLength);
 
   if (pwLength < 8 || pwLength > 128) {
@@ -44,9 +46,48 @@ var generatePassword = function () {
 
     var includeSymbols = window.confirm("Would you like your password to include symbols?");
     console.log("Include symbols:", includeSymbols);
+
   }
 
-  push
+
+  if (includeLowercase === true || includeUppercase === true || includeNum === true || includeSymbols === true) {
+    answersArray.push(includeLowercase, includeUppercase, includeSymbols, includeNum);
+    console.log(answersArray);
+
+  } else {
+    window.alert("You must select at least one type of character.");
+  }
+
+
+  while (passwordArray.length < pwLength) {
+    // If user wants LOWERCASE LETTERS, this pulls at least one.
+    if (answersArray[0] === true) {
+      passwordArray.push(lowercaseArray[Math.floor(Math.random() * 26)]);
+      console.log(passwordArray);
+    }
+
+    // If user wants UPPERCASE LETTERS, this pulls at least one.
+    if (answersArray[1] === true) {
+      passwordArray.push(uppercaseArray[Math.floor(Math.random() * 26)]);
+      console.log(passwordArray);
+    }
+
+    // If user wants NUMBERS, this pulls at least one.
+    if (answersArray[2] === true) {
+      passwordArray.push(randomNum);
+      console.log(passwordArray);
+    }
+
+    // If user wants SYMBOLS, this pulls at least one.
+    if (answersArray[3] === true) {
+      passwordArray.push(symbolsArray[Math.floor(Math.random() * 11)]);
+      console.log(passwordArray);
+    }
+  }
+
+  // Loop the above WHILE the pwLength value is < the length of passwordArray
+  // Then once the length of passwordArray = pwLength, convert passwordArray to a string
+  // That string becomes 'password' ???
 
 }
 
