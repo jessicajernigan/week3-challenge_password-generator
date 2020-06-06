@@ -69,7 +69,7 @@ var generatePassword = function () {
   }
 
   if (includeLowercase === true || includeUppercase === true || includeNum === true || includeSymbols === true) {
-    answersArray.push(includeLowercase, includeUppercase, includeSymbols, includeNum);
+    answersArray.push(includeLowercase, includeUppercase, includeNum, includeSymbols);
     console.log(answersArray);
   }
 
