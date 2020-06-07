@@ -1,12 +1,10 @@
-// Assignment code here
-
-
 // Arrays
 var lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var symbolsArray = ["!", "@", "#", "$", "%", "&", "|", ";", ">", "~", "`"]
 var numberArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
+// Empty arrays -- used to push user input data and assemble password based on given criteria.
 var answersArray = []
 var passwordArray = []
 
@@ -79,13 +77,6 @@ var generatePassword = function () {
       console.log(passwordArray.join(""));
     }
   }
-
-  // password = passwordArray.join(",");
-
-  // Loop the above WHILE the pwLength value is < the length of passwordArray
-  // Then once the length of passwordArray = pwLength, convert passwordArray to a string
-  // That string becomes 'password' ???
-
 }
 
 
@@ -102,17 +93,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria --> window.prompt() solicits an answer || window.confirm() solicits yes or no
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password:
-// 1. Length (prompt --> requesting input)
-// 2. lowercase (confirm --> yes/no)
-// 3. uppercase (confirm --> yes/no)
-// 4. numeric (confirm --> yes/no)
-// 5. special characters (confirm --> yes/no)
