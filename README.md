@@ -1,7 +1,7 @@
 # week3-challenge_password-generator
 
 
-![website screenshot](./pw-generator-screenshot.png)
+![website screenshot](./assets/pw-generator-screenshot.png)
 
 [Link to live page]()
 
