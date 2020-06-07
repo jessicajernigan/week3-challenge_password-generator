@@ -1,34 +1,14 @@
 // Assignment code here
 
-// ACCEPTANCE CRITERIA / PSEUDOCODE
-
-// WHEN prompted for the length of the password 
-// THEN I choose a length of at least 8 characters and no more than 128 characters --> Validate the user's answer. If it is <8 or >128, prompt the user to fix their input and prompt again. If the input is within the range, proceed.
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters --> At least one of these must be true.
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
 
 // Arrays
-
 var lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var symbolsArray = ["!", "@", "#", "$", "%", "&", "|", ";", ">", "~", "`"]
 var numberArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-// Thought it would be fun to use this, but I don't think it'll work.
-// randomNum = Math.floor(Math.random() * 9) + 1;
 var answersArray = []
 var passwordArray = []
-
-// var allOptionsArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "[", "@", "^", "$", ".", "|", "?", "*", "+", "(", ")", "]", "%", "~", "!"]
-// var allLettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-// Alternative solution: all inputs should be its own function 
 
 
 var generatePassword = function () {
