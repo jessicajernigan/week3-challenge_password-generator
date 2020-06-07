@@ -3,7 +3,7 @@
 
 ![website screenshot](./assets/pw-generator-screenshot.png)
 
-[Link to live page]()
+[Link to live page](https://jessicajernigan.github.io/week3-challenge_password-generator/)
 
 // ACCEPTANCE CRITERIA / PSEUDOCODE
 
