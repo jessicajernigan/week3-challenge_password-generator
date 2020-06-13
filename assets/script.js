@@ -85,9 +85,10 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  alert("Hello!")
   var passwordText = document.querySelector("#password");
-
+  passwordText.value = ""; // Need to find out how to clear the text before generating a new PW.
+  generatePassword();
   passwordText.value = passwordArray.join("");
 }
 
