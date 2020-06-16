@@ -15,6 +15,13 @@ var generatePassword = function () {
   var includeNum;
   var includeSymbols;
 
+  var passwordText = document.querySelector("#password");
+  if (passwordText.value != null) {
+    passwordText.value = "";
+    answersArray = [];
+    passwordArray = [];
+  }
+
   function inputs() {
     includeLowercase = window.confirm("Would you like your password to include lowercase letters?");
     console.log("Include lowercase letters:", includeLowercase);
@@ -85,14 +92,12 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var currentPassword = document.getElementById(password);
-  if (currentPassword != null) {
-    document.getElementById(password).value = " ";
-  }
   var passwordText = document.querySelector("#password");
   generatePassword();
   passwordText.value = passwordArray.join("");
 }
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
